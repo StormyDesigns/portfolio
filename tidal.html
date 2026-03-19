@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIDAL Rising + Artist Home — Stormy Jackson</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a1a; }
+
+/* NAV */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 2.5rem; border-bottom: 1px solid #e8e4d8;
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,253,247,0.92);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  max-width: 100%; width: 100%; box-sizing: border-box;
+}
+.nav-logo img { height: 28px; width: auto; display: block; }
+.nav-links { display: flex; gap: 2rem; font-size: 14px; color: #888; }
+.nav-links a { text-decoration: none; color: #888; transition: color 0.2s; }
+.nav-links a:hover { color: #1a1a1a; }
+.nav-back { font-size: 14px; color: #888; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: #FD830B; }
+
+/* HERO */
+.cs-hero {
+  background: #1a1a1a;
+  padding: 5rem 2.5rem 4rem;
+  max-width: 100%;
+}
+.cs-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.cs-tag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: #9FE1CB;
+  margin-bottom: 1.2rem;
+}
+.cs-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800; color: #fff;
+  line-height: 1.1; letter-spacing: -0.03em;
+  margin-bottom: 1.4rem;
+}
+.cs-subtitle {
+  font-size: 18px; color: rgba(255,255,255,0.6);
+  line-height: 1.7; max-width: 560px;
+  margin-bottom: 3rem;
+}
+.cs-meta {
+  display: flex; gap: 3rem; flex-wrap: wrap;
+}
+.cs-meta-item {}
+.cs-meta-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35);
+  margin-bottom: 0.3rem;
+}
+.cs-meta-value {
+  font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500;
+}
+
+/* COVER IMAGE */
+.cs-cover {
+  max-width: 100%;
+  background: #111;
+  border-bottom: 1px solid #e8e4d8;
+}
+.cs-cover img {
+  width: 100%; height: auto; display: block;
+  max-height: 520px; object-fit: cover; object-position: center top;
+}
+
+/* CONTENT */
+.cs-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2.5rem;
+}
+
+/* SECTION */
+.cs-section {
+  margin-bottom: 4rem;
+}
+.cs-section-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: #bbb;
+  margin-bottom: 1rem;
+}
+.cs-section h2 {
+  font-size: 26px; font-weight: 800; color: #1a1a1a;
+  letter-spacing: -0.02em; margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.cs-section p {
+  font-size: 16px; color: #555; line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.cs-section p:last-child { margin-bottom: 0; }
+
+/* DIVIDER */
+.cs-divider {
+  border: none; border-top: 1px solid #e8e4d8;
+  margin: 4rem 0;
+}
+
+/* STAT CARDS */
+.cs-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1rem; margin: 2rem 0;
+}
+.cs-stat {
+  background: #f7f5ef;
+  border-radius: 14px; padding: 1.4rem;
+}
+.cs-stat-num {
+  font-size: 32px; font-weight: 800; color: #FD830B;
+  letter-spacing: -0.03em; margin-bottom: 0.3rem;
+}
+.cs-stat-label {
+  font-size: 13px; color: #888; line-height: 1.4;
+}
+
+/* LINKS */
+.cs-links {
+  display: flex; flex-direction: column; gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+.cs-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 600; color: #1a1a1a;
+  text-decoration: none; padding: 0.7rem 1rem;
+  border: 1.5px solid #e8e4d8; border-radius: 10px;
+  transition: border-color 0.2s, color 0.2s;
+  width: fit-content;
+}
+.cs-link:hover { border-color: #FD830B; color: #FD830B; }
+.cs-link-arrow { font-size: 12px; }
+
+/* HIGHLIGHT BOX */
+.cs-highlight {
+  background: #1a1a1a; border-radius: 16px;
+  padding: 2rem; margin: 2rem 0;
+}
+.cs-highlight p {
+  color: rgba(255,255,255,0.7) !important;
+}
+.cs-highlight h3 {
+  font-size: 18px; font-weight: 700; color: #9FE1CB;
+  margin-bottom: 0.8rem;
+}
+
+/* IMAGE PLACEHOLDER */
+.cs-img-placeholder {
+  width: 100%; background: #f0ede6;
+  border: 1.5px dashed #d4d0c8;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 1.5rem 0; overflow: hidden;
+}
+.cs-img-placeholder img {
+  width: 100%; height: auto; display: block; border-radius: 14px;
+}
+.cs-img-placeholder-text {
+  padding: 3rem; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; color: #bbb;
+}
+
+/* FOOTER NAV */
+.cs-footer-nav {
+  border-top: 1px solid #e8e4d8;
+  padding: 3rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 100%;
+}
+.cs-footer-cta {
+  font-size: 22px; font-weight: 800; color: #1a1a1a;
+  letter-spacing: -0.02em;
+}
+.cs-footer-cta span { color: #FD830B; font-style: italic; }
+.cs-next {
+  font-size: 14px; font-weight: 600; color: #888;
+  text-decoration: none; display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.cs-next:hover { color: #FD830B; }
+
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.2rem; }
+  .cs-hero { padding: 3rem 1.2rem 2.5rem; }
+  .cs-body { padding: 2.5rem 1.2rem; }
+  .cs-meta { gap: 1.5rem; }
+  .cs-stats { grid-template-columns: 1fr; }
+  .cs-footer-nav { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.2rem; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-back">← Back to work</a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="https://www.dropbox.com/scl/fi/d9rt9romjsn1dmifl3w5i/Stormy-Jackson-Resume.pdf?rlkey=9cf8h0coomv3xboq5nq875ha6&st=1ypyrz7m&dl=1" target="_blank">Resume</a>
+    <a href="index.html#about">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-tag">Music &amp; Entertainment · 2023</div>
+    <h1 class="cs-title">TIDAL Rising +<br>Artist Home</h1>
+    <p class="cs-subtitle">Redesigning the artist discovery experience and home feed to drive growth and deeper fan engagement.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">My Role</div>
+        <div class="cs-meta-value">Design Consultant</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Timeline</div>
+        <div class="cs-meta-value">3 Days</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Platform</div>
+        <div class="cs-meta-value">Web</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Type</div>
+        <div class="cs-meta-value">B2C · Growth</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cs-cover">
+  <div class="cs-img-placeholder" style="border-radius:0;border:none;background:#111;margin:0;">
+    <div class="cs-img-placeholder-text" style="color:rgba(255,255,255,0.2)">Cover image</div>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <!-- OVERVIEW -->
+  <div class="cs-section">
+    <div class="cs-section-label">Overview</div>
+    <h2>A program built for rising artists</h2>
+    <p>TIDAL Rising is a program that offers artists a range of opportunities — featuring their music on the TIDAL home page, including their tracks in playlists, and promoting their music on social media. The program also provides young performers access to experienced music industry professionals and career advice.</p>
+    <p>For this project, I worked with the TIDAL team as a design consultant to revamp their TIDAL Rising page and TIDAL Artist Home — a hub where artists can add a profile image, bio, and social links.</p>
+  </div>
+
+  <hr class="cs-divider">
+
+  <!-- GETTING STARTED -->
+  <div class="cs-section">
+    <div class="cs-section-label">Getting Started</div>
+    <h2>Understanding the team's vision</h2>
+    <p>I started off the project by speaking with the TIDAL team to better understand their needs and set goals for the outcome. I gathered information about their target audience, mission, and overall vision. I reviewed their decks, videos, and other documents to get all the context I needed.</p>
+
+    <div class="cs-highlight">
+      <h3>This is what the TIDAL Rising homepage looked like when I was given the project</h3>
+      <p>The existing page lacked a clear visual hierarchy and didn't effectively communicate the value of the Rising program to artists or fans.</p>
+    </div>
+
+    <div class="cs-img-placeholder">
+      <div class="cs-img-placeholder-text">Before — TIDAL Rising homepage</div>
+    </div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <!-- COMPETITIVE ANALYSIS -->
+  <div class="cs-section">
+    <div class="cs-section-label">Research</div>
+    <h2>Competitive analysis</h2>
+    <p>I audited competitor streaming services to identify design opportunities and understand industry standards. I conducted an analysis on Spotify, Apple Music, Pandora, and Amazon Music.</p>
+
+    <div class="cs-links">
+      <a href="https://www.dropbox.com/scl/fi/fdrgzfm2fr1eeoz561nbl/Spotify-for-artists.pdf?rlkey=3ldesrsnbgk9euzv91ri2vr7r&dl=0" target="_blank" class="cs-link">
+        <span>Spotify for Artists Analysis</span>
+        <span class="cs-link-arrow">↗</span>
+      </a>
+      <a href="https://www.dropbox.com/scl/fi/h5am3bxdr9a40qmv55v1l/Apple-music-for-artists.pdf?rlkey=owexr6hfkdt02u9q75dg7bdqz&dl=0" target="_blank" class="cs-link">
+        <span>Apple Music for Artists Analysis</span>
+        <span class="cs-link-arrow">↗</span>
+      </a>
+      <a href="https://www.dropbox.com/scl/fi/9la1mme2uh71xxe50eymx/Pandora-playbook.pdf?rlkey=tbfeelf2gljms5akqbyide890&dl=0" target="_blank" class="cs-link">
+        <span>Pandora Playbook Analysis</span>
+        <span class="cs-link-arrow">↗</span>
+      </a>
+      <a href="https://www.dropbox.com/scl/fi/63qzf6ezyje6rw6jpaz1p/Amazon-music-for-artists.pdf?rlkey=koqoju6d7j69gtwkj9ja6b6yt&dl=0" target="_blank" class="cs-link">
+        <span>Amazon Music for Artists Analysis</span>
+        <span class="cs-link-arrow">↗</span>
+      </a>
+    </div>
+
+    <p>Based on the analysis, I provided a list of information that should be included in the TIDAL Rising and TIDAL Artist Home pages.</p>
+
+    <div class="cs-img-placeholder">
+      <div class="cs-img-placeholder-text">Competitive analysis findings</div>
+    </div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <!-- WIREFRAMING -->
+  <div class="cs-section">
+    <div class="cs-section-label">Design Process</div>
+    <h2>Wireframing</h2>
+    <p>I presented the team with 3 options for TIDAL Rising and 3 additional options that combine both TIDAL Rising and Artist Home.</p>
+
+    <div class="cs-img-placeholder">
+      <div class="cs-img-placeholder-text">Wireframe explorations — TIDAL Rising</div>
+    </div>
+
+    <div class="cs-img-placeholder">
+      <div class="cs-img-placeholder-text">Wireframe explorations — Combined view</div>
+    </div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <!-- HI-FI -->
+  <div class="cs-section">
+    <div class="cs-section-label">Final Design</div>
+    <h2>High-fidelity</h2>
+    <p>The team decided they liked Section 1: Option 2 the best. I designed a high-fidelity version so the team could get a better idea of how it would look when live.</p>
+
+    <div class="cs-img-placeholder">
+      <div class="cs-img-placeholder-text">High-fidelity designs</div>
+    </div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <!-- CONCLUSION -->
+  <div class="cs-section">
+    <div class="cs-section-label">Reflection</div>
+    <h2>Conclusion</h2>
+    <p>If I had more time to work on this project, I would have liked to speak more with the marketing and design team to better understand their visual style. But overall, I had a great time working on this project and getting to work with the team.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER NAV -->
+<div class="cs-footer-nav">
+  <div class="cs-footer-cta">Let's make something <span>people come back to.</span></div>
+  <a href="index.html" class="cs-next">← Back to all work</a>
+</div>
+
+</body>
+</html>
