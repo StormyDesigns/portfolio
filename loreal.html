@@ -81,7 +81,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 
 /* SECTION */
 .cs-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 .cs-section-label {
   font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
@@ -102,12 +102,11 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 /* DIVIDER */
 .cs-divider {
   border: none; border-top: 1px solid #e8e4d8;
-  margin: 4rem 0;
+  margin: 2.5rem 0;
 }
 
 /* IMAGE GRIDS */
 .cs-img-single {
-  margin: 1.5rem 0;
   border-radius: 14px;
   overflow: hidden;
 }
@@ -118,7 +117,6 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 .cs-grid {
   display: grid;
   gap: 0.75rem;
-  margin: 1.5rem 0;
 }
 .cs-grid img {
   width: 100%; height: auto; display: block;
@@ -126,9 +124,43 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 }
 .cs-grid-2 { grid-template-columns: 1fr 1fr; }
 .cs-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
-.cs-grid-4 { grid-template-columns: 1fr 1fr; }
-.cs-grid-9 { grid-template-columns: 1fr 1fr 1fr; }
-.cs-grid-5 { grid-template-columns: 1fr 1fr; }
+
+/* CAMPAIGN SPLIT: thumbnails left, hero right */
+.cs-campaign {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+.cs-campaign-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.cs-campaign-thumbs img {
+  width: 100%; height: auto; display: block;
+  border-radius: 10px;
+  flex: 1;
+}
+.cs-campaign-hero {
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+}
+.cs-campaign-hero img {
+  width: 100%; object-fit: cover; display: block;
+}
+
+/* FESTIVAL: full-width stacked */
+.cs-festival {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.cs-festival img {
+  width: 100%; height: auto; display: block;
+  border-radius: 10px;
+}
 
 /* FOOTER NAV */
 .cs-footer-nav {
@@ -153,7 +185,8 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   .cs-hero { padding: 3rem 1.2rem 2.5rem; }
   .cs-body { padding: 2.5rem 1.2rem; }
   .cs-meta { gap: 1.5rem; }
-  .cs-grid-2, .cs-grid-3, .cs-grid-4, .cs-grid-9, .cs-grid-5 { grid-template-columns: 1fr; }
+  .cs-grid-2, .cs-grid-3 { grid-template-columns: 1fr; }
+  .cs-campaign { grid-template-columns: 1fr; }
   .cs-footer-nav { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.2rem; }
   .nav-links { display: none; }
 }
@@ -202,9 +235,9 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 <!-- BODY -->
 <div class="cs-body">
 
-  <!-- OVERVIEW -->
+  <!-- BACKGROUND -->
   <div class="cs-section">
-    <div class="cs-section-label">Overview</div>
+    <div class="cs-section-label">Background</div>
     <h2>Digital design at the world's largest cosmetics company</h2>
     <p>L'Oréal is the world's largest cosmetics company and has developed activities in the field, concentrating on hair color, skincare, sun protection, make-up, perfume, and hair care.</p>
     <p>At L'Oréal, I was part of the NYX Professional Makeup division working as a digital designer. I designed assets for Email, SMS, and Web.</p>
@@ -212,52 +245,63 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 
   <hr class="cs-divider">
 
-  <!-- GROUP 1: 4 gifs -->
+  <!-- CAMPAIGN BLOCK A: 2 thumbs + hero -->
   <div class="cs-section">
-    <div class="cs-grid cs-grid-4">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4f000c43-d28c-425b-8d35-2c6e3555f97c_rw_600.gif?h=bd72404be48ef4bd090c88d8ecedf748" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/96f065c3-840f-401a-9638-ff27649cdcbd_rw_600.gif?h=4608c0fd9ce50842c058d98ace31f1f4" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4c4db82a-174c-445c-8aba-61da4eab02cb_rw_600.gif?h=eb88b2c23e6e040178b6de5aec8a85d0" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX campaign asset">
+    <div class="cs-campaign">
+      <div class="cs-campaign-thumbs">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4f000c43-d28c-425b-8d35-2c6e3555f97c_rw_600.gif?h=bd72404be48ef4bd090c88d8ecedf748" alt="NYX campaign asset">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/96f065c3-840f-401a-9638-ff27649cdcbd_rw_600.gif?h=4608c0fd9ce50842c058d98ace31f1f4" alt="NYX campaign asset">
+      </div>
+      <div class="cs-campaign-hero">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a1fcc646-2963-4415-88f3-3730bfd5a9c0_rw_600.gif?h=acdff9596e9c84b3fd0d03895d685c89" alt="NYX campaign hero">
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPAIGN BLOCK B: 2 thumbs + hero -->
+  <div class="cs-section">
+    <div class="cs-campaign">
+      <div class="cs-campaign-thumbs">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4c4db82a-174c-445c-8aba-61da4eab02cb_rw_600.gif?h=eb88b2c23e6e040178b6de5aec8a85d0" alt="NYX campaign asset">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX campaign asset">
+      </div>
+      <div class="cs-campaign-hero">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5659b61-7eb9-45e1-b284-036f075a6f74_rw_600.jpg?h=6d1ef02a2be79a98470223ae9ae1a537" alt="NYX campaign hero">
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMPAIGN BLOCK C: 3 thumbs + hero -->
+  <div class="cs-section">
+    <div class="cs-campaign">
+      <div class="cs-campaign-thumbs">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX campaign asset">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0086d9bf-2e62-4b9f-a563-2ec703f42fff_rw_600.gif?h=a13a7ffb90e0575eb22e4461c3c57e15" alt="NYX campaign asset">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/79a0b0f8-d797-43de-87e3-638c3e3925f9_rw_600.gif?h=ecb4942f25e1c6c5f44d9558b8300708" alt="NYX campaign asset">
+      </div>
+      <div class="cs-campaign-hero">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1de8d46b-2553-43b0-9f5a-95c9aa1442dd_rw_1200.jpg?h=de4b5800c4f7d463e1d66c47bafa6467" alt="NYX campaign hero">
+      </div>
     </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- GROUP 2: 1 gif -->
+  <!-- FESTIVAL: 4 full-width stacked images -->
   <div class="cs-section">
-    <div class="cs-img-single">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a1fcc646-2963-4415-88f3-3730bfd5a9c0_rw_600.gif?h=acdff9596e9c84b3fd0d03895d685c89" alt="NYX campaign asset">
+    <div class="cs-festival">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1e4659aa-33f8-4aed-8741-b05db78329ae_rw_1920.png?h=7b4f18fbcf92d13219d40fc6d125e140" alt="Festival Glitter Makeup">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/3302c228-f49d-4d2b-946b-1972f22bf628_rw_1920.png?h=9f6ecc773920cefc6a42787c894f3843" alt="Eye Festival Makeup">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0e7f4da5-7bb2-4757-9e04-354c0cbcc6fe_rw_1920.png?h=9fa0f43fb97bd6fed9a729080a744b5c" alt="Lip Festival Makeup">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/931411fd-5ee5-4de6-8619-06f75d74f810_rw_1920.png?h=c30e181f3bbdae06e9245c8d0c1f5120" alt="Face Festival Makeup">
     </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- GROUP 3: gif + jpg -->
+  <!-- WEB SCREENSHOTS: 3-col grid -->
   <div class="cs-section">
-    <div class="cs-grid cs-grid-2">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5659b61-7eb9-45e1-b284-036f075a6f74_rw_600.jpg?h=6d1ef02a2be79a98470223ae9ae1a537" alt="NYX campaign asset">
-    </div>
-  </div>
-
-  <hr class="cs-divider">
-
-  <!-- GROUP 4: gif + gif + gif + jpg -->
-  <div class="cs-section">
-    <div class="cs-grid cs-grid-4">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0086d9bf-2e62-4b9f-a563-2ec703f42fff_rw_600.gif?h=a13a7ffb90e0575eb22e4461c3c57e15" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/79a0b0f8-d797-43de-87e3-638c3e3925f9_rw_600.gif?h=ecb4942f25e1c6c5f44d9558b8300708" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1de8d46b-2553-43b0-9f5a-95c9aa1442dd_rw_1200.jpg?h=de4b5800c4f7d463e1d66c47bafa6467" alt="NYX campaign asset">
-    </div>
-  </div>
-
-  <hr class="cs-divider">
-
-  <!-- GROUP 5: 9 images -->
-  <div class="cs-section">
-    <div class="cs-grid cs-grid-9">
+    <div class="cs-grid cs-grid-3">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/d469c7be-ff8d-4caf-99da-ce4b27a96482_rw_1920.jpg?h=c2fd02de1469201b5dad7ca95f9c1485" alt="NYX web asset">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a60b52d9-9b85-499e-aa8e-9bc6f787306a_rw_1920.jpg?h=a357d9be051a76b6203e4cc3c7d007cb" alt="NYX web asset">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/f7b16b9c-220c-491a-b12a-c56bf249ad60_rw_1920.jpg?h=082c2deb752bca40d24f7a77dd6866be" alt="NYX web asset">
@@ -272,7 +316,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 
   <hr class="cs-divider">
 
-  <!-- GROUP 6: 3 gifs -->
+  <!-- EMAIL 3-COL -->
   <div class="cs-section">
     <div class="cs-grid cs-grid-3">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/f592c122-6e63-46a8-9cf5-4f99dd83f4af_rw_1200.gif?h=8ccd6bd6881bbd877f1b28792fd72134" alt="NYX campaign asset">
@@ -281,21 +325,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
     </div>
   </div>
 
-  <hr class="cs-divider">
-
-  <!-- GROUP 7: 4 pngs -->
-  <div class="cs-section">
-    <div class="cs-grid cs-grid-4">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1e4659aa-33f8-4aed-8741-b05db78329ae_rw_1920.png?h=7b4f18fbcf92d13219d40fc6d125e140" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/3302c228-f49d-4d2b-946b-1972f22bf628_rw_1920.png?h=9f6ecc773920cefc6a42787c894f3843" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0e7f4da5-7bb2-4757-9e04-354c0cbcc6fe_rw_1920.png?h=9fa0f43fb97bd6fed9a729080a744b5c" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/931411fd-5ee5-4de6-8619-06f75d74f810_rw_1920.png?h=c30e181f3bbdae06e9245c8d0c1f5120" alt="NYX campaign asset">
-    </div>
-  </div>
-
-  <hr class="cs-divider">
-
-  <!-- GROUP 8: 5 gifs + png -->
+  <!-- EMAIL 3-COL + 2 -->
   <div class="cs-section">
     <div class="cs-grid cs-grid-3">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/51d45857-f1e3-4eba-a91a-225d5ca42603_rw_1200.gif?h=f4deb31d01239095b335862d2d08e2d6" alt="NYX campaign asset">
@@ -306,8 +336,6 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
     </div>
   </div>
 
-  <hr class="cs-divider">
-
   <!-- SINGLE -->
   <div class="cs-section">
     <div class="cs-img-single">
@@ -315,9 +343,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
     </div>
   </div>
 
-  <hr class="cs-divider">
-
-  <!-- GROUP 10: 2 pngs -->
+  <!-- 2-COL -->
   <div class="cs-section">
     <div class="cs-grid cs-grid-2">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/b940edd1-0ebf-4497-b294-86598fa79a11_rw_1920.png?h=761752650478e54ea7e37297129707cb" alt="NYX campaign asset">
