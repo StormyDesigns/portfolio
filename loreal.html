@@ -113,32 +113,38 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   display: grid;
   grid-template-columns: 1fr 2.2fr;
   gap: var(--g);
-  height: 460px;
+  height: 480px;
   margin-bottom: var(--g);
 }
-.cb.tall { height: 560px; }
+.cb.tall { height: 600px; }
 .cb-thumbs {
   display: flex;
   flex-direction: column;
   gap: var(--g);
+  height: 100%;
 }
-.cb-thumbs img {
+.cb-thumb {
   flex: 1;
   min-height: 0;
-  width: 100%;
-  object-fit: contain;
-  background: #f2f1ef;
   border-radius: var(--r);
+  overflow: hidden;
+  background: #f2f1ef;
+}
+.cb-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
 }
 .cb-hero {
   border-radius: var(--r);
   overflow: hidden;
+  background: #f2f1ef;
 }
 .cb-hero img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -202,8 +208,8 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   .cs-body { padding: 2.5rem 1.2rem; }
   .cs-meta { gap: 1.5rem; }
   .cb { grid-template-columns: 1fr; height: auto; }
-  .cb-thumbs { flex-direction: row; }
-  .cb-thumbs img { flex: 1; height: 140px; object-fit: cover; }
+  .cb-thumbs { flex-direction: row; height: 140px; }
+  .cb-thumb { flex: 1; min-width: 0; height: 100%; }
   .cb-hero { height: 220px; }
   .row-3 { grid-template-columns: 1fr 1fr; }
   .row-2 { grid-template-columns: 1fr; }
@@ -268,8 +274,8 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <!-- CAMPAIGN BLOCK 1: 2 email thumbs left, hero right -->
   <div class="cb">
     <div class="cb-thumbs">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4f000c43-d28c-425b-8d35-2c6e3555f97c_rw_600.gif?h=bd72404be48ef4bd090c88d8ecedf748" alt="NYX email">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/96f065c3-840f-401a-9638-ff27649cdcbd_rw_600.gif?h=4608c0fd9ce50842c058d98ace31f1f4" alt="NYX email">
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4f000c43-d28c-425b-8d35-2c6e3555f97c_rw_600.gif?h=bd72404be48ef4bd090c88d8ecedf748" alt="NYX email"></div>
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/96f065c3-840f-401a-9638-ff27649cdcbd_rw_600.gif?h=4608c0fd9ce50842c058d98ace31f1f4" alt="NYX email"></div>
     </div>
     <div class="cb-hero">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a1fcc646-2963-4415-88f3-3730bfd5a9c0_rw_600.gif?h=acdff9596e9c84b3fd0d03895d685c89" alt="NYX campaign hero">
@@ -279,8 +285,8 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <!-- CAMPAIGN BLOCK 2: 2 email thumbs left, hero right -->
   <div class="cb">
     <div class="cb-thumbs">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4c4db82a-174c-445c-8aba-61da4eab02cb_rw_600.gif?h=eb88b2c23e6e040178b6de5aec8a85d0" alt="NYX email">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX email">
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4c4db82a-174c-445c-8aba-61da4eab02cb_rw_600.gif?h=eb88b2c23e6e040178b6de5aec8a85d0" alt="NYX email"></div>
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX email"></div>
     </div>
     <div class="cb-hero">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5659b61-7eb9-45e1-b284-036f075a6f74_rw_600.jpg?h=6d1ef02a2be79a98470223ae9ae1a537" alt="NYX campaign hero">
@@ -290,9 +296,9 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <!-- CAMPAIGN BLOCK 3: 3 email thumbs left, hero right -->
   <div class="cb tall">
     <div class="cb-thumbs">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX email">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0086d9bf-2e62-4b9f-a563-2ec703f42fff_rw_600.gif?h=a13a7ffb90e0575eb22e4461c3c57e15" alt="NYX email">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/79a0b0f8-d797-43de-87e3-638c3e3925f9_rw_600.gif?h=ecb4942f25e1c6c5f44d9558b8300708" alt="NYX email">
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX email"></div>
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0086d9bf-2e62-4b9f-a563-2ec703f42fff_rw_600.gif?h=a13a7ffb90e0575eb22e4461c3c57e15" alt="NYX email"></div>
+      <div class="cb-thumb"><img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/79a0b0f8-d797-43de-87e3-638c3e3925f9_rw_600.gif?h=ecb4942f25e1c6c5f44d9558b8300708" alt="NYX email"></div>
     </div>
     <div class="cb-hero">
       <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1de8d46b-2553-43b0-9f5a-95c9aa1442dd_rw_1200.jpg?h=de4b5800c4f7d463e1d66c47bafa6467" alt="NYX campaign hero">
