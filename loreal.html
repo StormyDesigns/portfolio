@@ -152,9 +152,11 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 .row-4 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 4fr;
-  grid-template-rows: 560px;
-  gap: var(--g);
+  grid-template-rows: 820px;
+  gap: 4px;
   overflow: hidden;
+  margin-left: -3rem;
+  margin-right: -3rem;
   margin-bottom: 40px;
 }
 .row-4 img {
@@ -162,6 +164,27 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   object-fit: contain;
   object-position: top center;
   border-radius: var(--r);
+  cursor: zoom-in;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
 }
 
 /* EQUAL-COL GRID: natural aspect, no cropping */
@@ -365,5 +388,18 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <a href="index.html" class="cs-next">← Back to all work</a>
 </div>
 
+<!-- LIGHTBOX -->
+<div id="lightbox"><img id="lightbox-img" src="" alt="Preview"></div>
+<script>
+  document.querySelectorAll('.row-4 img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+    });
+  });
+  document.getElementById('lightbox').addEventListener('click', () => {
+    document.getElementById('lightbox').classList.remove('open');
+  });
+</script>
 </body>
 </html>
