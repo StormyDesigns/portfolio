@@ -151,13 +151,15 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 /* 4-COL EMAIL ROW */
 .row-4 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 2fr;
   gap: var(--g);
-  align-items: start;
+  height: 560px;
+  align-items: stretch;
   margin-bottom: var(--g);
 }
 .row-4 img {
-  width: 100%; height: auto; display: block;
+  width: 100%; height: 100%; display: block;
+  object-fit: contain;
   border-radius: var(--r);
 }
 
