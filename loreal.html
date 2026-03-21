@@ -29,7 +29,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   padding: 5rem 2.5rem 4rem;
 }
 .cs-hero-inner {
-  max-width: 860px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .cs-tag {
@@ -74,9 +74,9 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 
 /* CONTENT */
 .cs-body {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 2.5rem;
+  padding: 4rem 3rem;
 }
 
 /* SECTION */
@@ -105,61 +105,29 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   margin: 2.5rem 0;
 }
 
-/* IMAGE GRIDS */
-.cs-img-single {
-  border-radius: 14px;
-  overflow: hidden;
-}
-.cs-img-single img {
-  width: 100%; height: auto; display: block;
-}
-
-.cs-grid {
+/* BENTO GALLERY */
+.bento {
   display: grid;
-  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
-.cs-grid img {
+.bento img {
   width: 100%; height: auto; display: block;
   border-radius: 10px;
 }
-.cs-grid-2 { grid-template-columns: 1fr 1fr; }
-.cs-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.bento .s2 { grid-column: span 2; }
+.bento .s3 { grid-column: span 3; }
 
-/* CAMPAIGN SPLIT: thumbnails left, hero right */
-.cs-campaign {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0.75rem;
-  align-items: stretch;
+/* MASONRY (CSS columns) */
+.masonry {
+  columns: 3;
+  column-gap: 10px;
 }
-.cs-campaign-thumbs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-.cs-campaign-thumbs img {
+.masonry img {
   width: 100%; height: auto; display: block;
   border-radius: 10px;
-  flex: 1;
-}
-.cs-campaign-hero {
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-}
-.cs-campaign-hero img {
-  width: 100%; object-fit: cover; display: block;
-}
-
-/* FESTIVAL: full-width stacked */
-.cs-festival {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.cs-festival img {
-  width: 100%; height: auto; display: block;
-  border-radius: 10px;
+  margin-bottom: 10px;
+  break-inside: avoid;
 }
 
 /* FOOTER NAV */
@@ -185,8 +153,9 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   .cs-hero { padding: 3rem 1.2rem 2.5rem; }
   .cs-body { padding: 2.5rem 1.2rem; }
   .cs-meta { gap: 1.5rem; }
-  .cs-grid-2, .cs-grid-3 { grid-template-columns: 1fr; }
-  .cs-campaign { grid-template-columns: 1fr; }
+  .bento { grid-template-columns: 1fr 1fr; }
+  .bento .s2, .bento .s3 { grid-column: span 2; }
+  .masonry { columns: 2; }
   .cs-footer-nav { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.2rem; }
   .nav-links { display: none; }
 }
@@ -245,109 +214,73 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 
   <hr class="cs-divider">
 
-  <!-- CAMPAIGN BLOCK A: 2 thumbs + hero -->
+  <!-- BENTO: CAMPAIGN GIFs -->
   <div class="cs-section">
-    <div class="cs-campaign">
-      <div class="cs-campaign-thumbs">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4f000c43-d28c-425b-8d35-2c6e3555f97c_rw_600.gif?h=bd72404be48ef4bd090c88d8ecedf748" alt="NYX campaign asset">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/96f065c3-840f-401a-9638-ff27649cdcbd_rw_600.gif?h=4608c0fd9ce50842c058d98ace31f1f4" alt="NYX campaign asset">
-      </div>
-      <div class="cs-campaign-hero">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a1fcc646-2963-4415-88f3-3730bfd5a9c0_rw_600.gif?h=acdff9596e9c84b3fd0d03895d685c89" alt="NYX campaign hero">
-      </div>
-    </div>
-  </div>
-
-  <!-- CAMPAIGN BLOCK B: 2 thumbs + hero -->
-  <div class="cs-section">
-    <div class="cs-campaign">
-      <div class="cs-campaign-thumbs">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4c4db82a-174c-445c-8aba-61da4eab02cb_rw_600.gif?h=eb88b2c23e6e040178b6de5aec8a85d0" alt="NYX campaign asset">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX campaign asset">
-      </div>
-      <div class="cs-campaign-hero">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5659b61-7eb9-45e1-b284-036f075a6f74_rw_600.jpg?h=6d1ef02a2be79a98470223ae9ae1a537" alt="NYX campaign hero">
-      </div>
-    </div>
-  </div>
-
-  <!-- CAMPAIGN BLOCK C: 3 thumbs + hero -->
-  <div class="cs-section">
-    <div class="cs-campaign">
-      <div class="cs-campaign-thumbs">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX campaign asset">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0086d9bf-2e62-4b9f-a563-2ec703f42fff_rw_600.gif?h=a13a7ffb90e0575eb22e4461c3c57e15" alt="NYX campaign asset">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/79a0b0f8-d797-43de-87e3-638c3e3925f9_rw_600.gif?h=ecb4942f25e1c6c5f44d9558b8300708" alt="NYX campaign asset">
-      </div>
-      <div class="cs-campaign-hero">
-        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1de8d46b-2553-43b0-9f5a-95c9aa1442dd_rw_1200.jpg?h=de4b5800c4f7d463e1d66c47bafa6467" alt="NYX campaign hero">
-      </div>
+    <div class="bento">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a1fcc646-2963-4415-88f3-3730bfd5a9c0_rw_600.gif?h=acdff9596e9c84b3fd0d03895d685c89" class="s2" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4f000c43-d28c-425b-8d35-2c6e3555f97c_rw_600.gif?h=bd72404be48ef4bd090c88d8ecedf748" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4c4db82a-174c-445c-8aba-61da4eab02cb_rw_600.gif?h=eb88b2c23e6e040178b6de5aec8a85d0" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/96f065c3-840f-401a-9638-ff27649cdcbd_rw_600.gif?h=4608c0fd9ce50842c058d98ace31f1f4" class="s2" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5659b61-7eb9-45e1-b284-036f075a6f74_rw_600.jpg?h=6d1ef02a2be79a98470223ae9ae1a537" class="s2" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8a1e98e4-4309-470c-9f4f-a0c792e634ec_rw_600.gif?h=2b8d6e2c85eed0b6b0c4384ed5bef020" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0086d9bf-2e62-4b9f-a563-2ec703f42fff_rw_600.gif?h=a13a7ffb90e0575eb22e4461c3c57e15" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/79a0b0f8-d797-43de-87e3-638c3e3925f9_rw_600.gif?h=ecb4942f25e1c6c5f44d9558b8300708" alt="NYX campaign">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1de8d46b-2553-43b0-9f5a-95c9aa1442dd_rw_1200.jpg?h=de4b5800c4f7d463e1d66c47bafa6467" class="s3" alt="NYX campaign">
     </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- FESTIVAL: 4 full-width stacked images -->
+  <!-- BENTO: FESTIVAL PNGs (wide banners — full-width stacked in bento) -->
   <div class="cs-section">
-    <div class="cs-festival">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1e4659aa-33f8-4aed-8741-b05db78329ae_rw_1920.png?h=7b4f18fbcf92d13219d40fc6d125e140" alt="Festival Glitter Makeup">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/3302c228-f49d-4d2b-946b-1972f22bf628_rw_1920.png?h=9f6ecc773920cefc6a42787c894f3843" alt="Eye Festival Makeup">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0e7f4da5-7bb2-4757-9e04-354c0cbcc6fe_rw_1920.png?h=9fa0f43fb97bd6fed9a729080a744b5c" alt="Lip Festival Makeup">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/931411fd-5ee5-4de6-8619-06f75d74f810_rw_1920.png?h=c30e181f3bbdae06e9245c8d0c1f5120" alt="Face Festival Makeup">
+    <div class="bento">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1e4659aa-33f8-4aed-8741-b05db78329ae_rw_1920.png?h=7b4f18fbcf92d13219d40fc6d125e140" class="s3" alt="Festival Glitter Makeup">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/3302c228-f49d-4d2b-946b-1972f22bf628_rw_1920.png?h=9f6ecc773920cefc6a42787c894f3843" class="s3" alt="Eye Festival Makeup">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0e7f4da5-7bb2-4757-9e04-354c0cbcc6fe_rw_1920.png?h=9fa0f43fb97bd6fed9a729080a744b5c" class="s3" alt="Lip Festival Makeup">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/931411fd-5ee5-4de6-8619-06f75d74f810_rw_1920.png?h=c30e181f3bbdae06e9245c8d0c1f5120" class="s3" alt="Face Festival Makeup">
     </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- WEB SCREENSHOTS: 3-col grid -->
+  <!-- MASONRY: WEB SCREENSHOTS -->
   <div class="cs-section">
-    <div class="cs-grid cs-grid-3">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/d469c7be-ff8d-4caf-99da-ce4b27a96482_rw_1920.jpg?h=c2fd02de1469201b5dad7ca95f9c1485" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a60b52d9-9b85-499e-aa8e-9bc6f787306a_rw_1920.jpg?h=a357d9be051a76b6203e4cc3c7d007cb" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/f7b16b9c-220c-491a-b12a-c56bf249ad60_rw_1920.jpg?h=082c2deb752bca40d24f7a77dd6866be" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/62dff18c-4539-4a93-bf3f-e37efdb47d1a_rw_1920.jpg?h=0da8564d8a8e7a0ca986ba9362585356" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1f0e3721-a2e3-4971-bb55-23caa8024f80_rw_1200.png?h=110d798e7da47cb4b129c1b85d46c7ac" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/49fcc877-c0ab-45d0-9969-4a41c865d383_rw_1200.png?h=5f966fcad729badc3f8bbcb36999f23a" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/ddbce390-64dd-4747-8d22-1d53759b4e12_rw_1200.png?h=914caa5e46f03acfa6b4327daf65d9f3" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/62bb9a7a-95dd-4a88-9b65-7ea549f57624_rw_1920.png?h=ef4f668647cd9f76e3ff6356b7fd1bd7" alt="NYX web asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/cf04d515-8745-450e-b60e-b75addea1f81_rw_1920.png?h=30bcd7ae463aacd3f598e7615a0975d4" alt="NYX web asset">
+    <div class="masonry">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/d469c7be-ff8d-4caf-99da-ce4b27a96482_rw_1920.jpg?h=c2fd02de1469201b5dad7ca95f9c1485" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a60b52d9-9b85-499e-aa8e-9bc6f787306a_rw_1920.jpg?h=a357d9be051a76b6203e4cc3c7d007cb" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/f7b16b9c-220c-491a-b12a-c56bf249ad60_rw_1920.jpg?h=082c2deb752bca40d24f7a77dd6866be" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/62dff18c-4539-4a93-bf3f-e37efdb47d1a_rw_1920.jpg?h=0da8564d8a8e7a0ca986ba9362585356" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/1f0e3721-a2e3-4971-bb55-23caa8024f80_rw_1200.png?h=110d798e7da47cb4b129c1b85d46c7ac" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/49fcc877-c0ab-45d0-9969-4a41c865d383_rw_1200.png?h=5f966fcad729badc3f8bbcb36999f23a" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/ddbce390-64dd-4747-8d22-1d53759b4e12_rw_1200.png?h=914caa5e46f03acfa6b4327daf65d9f3" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/62bb9a7a-95dd-4a88-9b65-7ea549f57624_rw_1920.png?h=ef4f668647cd9f76e3ff6356b7fd1bd7" alt="NYX web">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/cf04d515-8745-450e-b60e-b75addea1f81_rw_1920.png?h=30bcd7ae463aacd3f598e7615a0975d4" alt="NYX web">
     </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- EMAIL 3-COL -->
+  <!-- BENTO: EMAIL GIFs -->
   <div class="cs-section">
-    <div class="cs-grid cs-grid-3">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/f592c122-6e63-46a8-9cf5-4f99dd83f4af_rw_1200.gif?h=8ccd6bd6881bbd877f1b28792fd72134" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/290f5a1f-4467-4a6b-8114-384c5a2d8e2f_rw_1200.gif?h=58570517510a47f076cf05a7ad99ac22" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/451651c9-991e-4efd-9069-6018b04b6dab_rw_1200.gif?h=cbc8becc68c346eaef1be762e9e2ea5b" alt="NYX campaign asset">
+    <div class="bento">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/f592c122-6e63-46a8-9cf5-4f99dd83f4af_rw_1200.gif?h=8ccd6bd6881bbd877f1b28792fd72134" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/290f5a1f-4467-4a6b-8114-384c5a2d8e2f_rw_1200.gif?h=58570517510a47f076cf05a7ad99ac22" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/451651c9-991e-4efd-9069-6018b04b6dab_rw_1200.gif?h=cbc8becc68c346eaef1be762e9e2ea5b" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/51d45857-f1e3-4eba-a91a-225d5ca42603_rw_1200.gif?h=f4deb31d01239095b335862d2d08e2d6" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/06ffdcf6-cc6b-4779-b493-55721cd37bfa_rw_1200.gif?h=338fa30d9dcfad318533fd045eadff00" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/b4c89407-5ee1-4e0c-af6f-a12629aff4c6_rw_1200.gif?h=478c5e1ffc47c3823559b68766b0bd92" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a810be8a-489d-45b9-9422-41a231e24614_rw_1200.gif?h=6e5293ffe2463020b7c1bc2b1ef411cf" alt="NYX email">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/c3306a05-fbb3-4a94-9d11-699e855ce780_rw_1920.png?h=34d493beb36de23ff3d2d2aee4bcc50e" class="s2" alt="NYX email">
     </div>
   </div>
 
-  <!-- EMAIL 3-COL + 2 -->
+  <!-- BENTO: FINAL 3 -->
   <div class="cs-section">
-    <div class="cs-grid cs-grid-3">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/51d45857-f1e3-4eba-a91a-225d5ca42603_rw_1200.gif?h=f4deb31d01239095b335862d2d08e2d6" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/06ffdcf6-cc6b-4779-b493-55721cd37bfa_rw_1200.gif?h=338fa30d9dcfad318533fd045eadff00" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/b4c89407-5ee1-4e0c-af6f-a12629aff4c6_rw_1200.gif?h=478c5e1ffc47c3823559b68766b0bd92" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a810be8a-489d-45b9-9422-41a231e24614_rw_1200.gif?h=6e5293ffe2463020b7c1bc2b1ef411cf" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/c3306a05-fbb3-4a94-9d11-699e855ce780_rw_1920.png?h=34d493beb36de23ff3d2d2aee4bcc50e" alt="NYX campaign asset">
-    </div>
-  </div>
-
-  <!-- SINGLE -->
-  <div class="cs-section">
-    <div class="cs-img-single">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/302bdbf7-02db-4d54-a2ff-92f1303d964d_rw_1920.png?h=2fb0663df1af43ac341631015aff4265" alt="NYX campaign asset">
-    </div>
-  </div>
-
-  <!-- 2-COL -->
-  <div class="cs-section">
-    <div class="cs-grid cs-grid-2">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/b940edd1-0ebf-4497-b294-86598fa79a11_rw_1920.png?h=761752650478e54ea7e37297129707cb" alt="NYX campaign asset">
-      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5080784-034b-4d72-82c1-fa1e5ba53dad_rw_1920.png?h=6722fcca8f9b8ab6a95a111c3cc289db" alt="NYX campaign asset">
+    <div class="bento">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/302bdbf7-02db-4d54-a2ff-92f1303d964d_rw_1920.png?h=2fb0663df1af43ac341631015aff4265" class="s3" alt="NYX asset">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/b940edd1-0ebf-4497-b294-86598fa79a11_rw_1920.png?h=761752650478e54ea7e37297129707cb" class="s2" alt="NYX asset">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5080784-034b-4d72-82c1-fa1e5ba53dad_rw_1920.png?h=6722fcca8f9b8ab6a95a111c3cc289db" alt="NYX asset">
     </div>
   </div>
 
