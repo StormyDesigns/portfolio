@@ -167,6 +167,25 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   cursor: zoom-in;
 }
 
+/* 2-COL ROW */
+.row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 820px;
+  gap: 4px;
+  overflow: hidden;
+  margin-left: -3rem;
+  margin-right: -3rem;
+  margin-bottom: 40px;
+}
+.row-2 img {
+  width: 100%; height: 100%; display: block;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: var(--r);
+  cursor: zoom-in;
+}
+
 /* LIGHTBOX */
 #lightbox {
   display: none;
@@ -318,6 +337,12 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
     <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/692cd719-6c09-40f7-99f3-ae05b284ed69_rw_600.gif?h=8e3056da907c65e8faf2c407e4c71ced" alt="NYX Buttermelt Blush email">
   </div>
 
+  <!-- GROUP 2: 2 images side by side -->
+  <div class="row-2">
+    <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a1fcc646-2963-4415-88f3-3730bfd5a9c0_rw_600.gif?h=acdff9596e9c84b3fd0d03895d685c89" alt="NYX email">
+    <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a5659b61-7eb9-45e1-b284-036f075a6f74_rw_600.jpg?h=6d1ef02a2be79a98470223ae9ae1a537" alt="NYX campaign image">
+  </div>
+
   <!-- CAMPAIGN BLOCK 3: 3 email thumbs left, hero right -->
   <div class="cb tall">
     <div class="cb-thumbs">
@@ -391,7 +416,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 <!-- LIGHTBOX -->
 <div id="lightbox"><img id="lightbox-img" src="" alt="Preview"></div>
 <script>
-  document.querySelectorAll('.row-4 img').forEach(img => {
+  document.querySelectorAll('.row-4 img, .row-2 img').forEach(img => {
     img.addEventListener('click', () => {
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').classList.add('open');
