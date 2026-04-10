@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Stormy Jackson</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a1a; }
+
+/* NAV */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 2.5rem; border-bottom: 1px solid #e8e4d8;
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,253,247,0.92);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  max-width: 100%; width: 100%; box-sizing: border-box;
+}
+.nav-links { display: flex; gap: 2rem; font-size: 14px; color: #888; }
+.nav-links a { text-decoration: none; color: #888; transition: color 0.2s; }
+.nav-links a:hover { color: #1a1a1a; }
+.nav-back { font-size: 14px; color: #888; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: #FD830B; }
+
+/* HERO */
+.about-hero {
+  background: #1a1a1a;
+  padding: 5rem 2.5rem 4rem;
+}
+.about-hero-inner { max-width: 860px; margin: 0 auto; }
+.about-tag {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+  margin-bottom: 1.2rem;
+}
+.about-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; color: #fff;
+  line-height: 1.1; letter-spacing: -0.03em;
+}
+.about-title span { color: #FD830B; font-style: italic; }
+
+/* BODY */
+.about-body { max-width: 800px; margin: 0 auto; padding: 4rem 2.5rem; }
+
+/* PHOTO */
+.about-photo-wrap {
+  margin-bottom: 3.5rem;
+}
+.about-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border: 3px solid #e8e4d8;
+}
+
+/* BIO */
+.about-bio p {
+  font-size: 17px; color: #444; line-height: 1.9;
+  margin-bottom: 1.6rem;
+}
+.about-bio p:last-child { margin-bottom: 0; }
+
+/* CTA */
+.about-cta {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e8e4d8;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.about-cta a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.cta-primary {
+  background: #FD830B;
+  color: #fff;
+}
+.cta-primary:hover { background: #e57609; }
+.cta-secondary {
+  background: transparent;
+  color: #1a1a1a;
+  border: 1.5px solid #e8e4d8;
+}
+.cta-secondary:hover { border-color: #1a1a1a; }
+
+/* FOOTER NAV */
+.cs-footer-nav {
+  border-top: 1px solid #e8e4d8; padding: 3rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cs-footer-cta { font-size: 22px; font-weight: 800; color: #1a1a1a; letter-spacing: -0.02em; }
+.cs-footer-cta span { color: #FD830B; font-style: italic; }
+.cs-next {
+  font-size: 14px; font-weight: 600; color: #888;
+  text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+}
+.cs-next:hover { color: #FD830B; }
+
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.2rem; }
+  .nav-links { display: none; }
+  .about-hero { padding: 3rem 1.2rem 2.5rem; }
+  .about-body { padding: 2.5rem 1.2rem; }
+  .cs-footer-nav { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.2rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-back">← Back to work</a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="https://www.dropbox.com/scl/fi/d9rt9romjsn1dmifl3w5i/Stormy-Jackson-Resume.pdf?rlkey=9cf8h0coomv3xboq5nq875ha6&st=1ypyrz7m&dl=1" target="_blank">Resume</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="about-hero">
+  <div class="about-hero-inner">
+    <div class="about-tag">Product Designer · UX</div>
+    <h1 class="about-title">Hi, I'm Stormy.<br><span>Nice to meet you.</span></h1>
+  </div>
+</div>
+
+<!-- BODY -->
+<div class="about-body">
+
+  <div class="about-photo-wrap">
+    <img src="stormy-headshot.jpeg" alt="Stormy Jackson" class="about-photo">
+  </div>
+
+  <div class="about-bio">
+    <p>My passion for design all started with a drawing book I got when I was 7. Growing up, things weren't always easy in a low-income family, but those pages were where I could be myself and just escape for a bit.</p>
+    <p>High school was where things got real with design. I dived into graphic and web design classes and fell for the digital world. But there was a problem — I couldn't afford a laptop to use at home. But I didn't let that stop me. I decided to sell candy bars at school. It took a while, but I finally saved enough for my own laptop and that all-important Adobe software. Talk about a lesson in determination!</p>
+    <p>College was where things took off. I went for a design degree and found my creative voice as well as gained knowledge in critical and creative thinking, visual and aesthetic sense, and dynamics of business and technology and integrated those learnings through design. Plus I got to work at jobs that taught me something new about teamwork, carrying out my designs from start to finish, and designing experiences that make a difference.</p>
+    <p>For me, product design is this incredible mash-up of art, technology, and understanding what makes people tick. It's more than a job; it's my passion and, dare I say, my calling.</p>
+    <p>I'm all about diving head-first into the product design world and keeping up with the latest and greatest. Always up for a challenge and keen to keep learning.</p>
+    <p>If you're into talking about design, job opportunities, or just want to say hi, feel free to message me via email or LinkedIn. Let's see what cool things we can create together!</p>
+  </div>
+
+  <div class="about-cta">
+    <a href="mailto:stormyjackson.design@gmail.com" class="cta-primary">Say hello →</a>
+    <a href="https://www.linkedin.com/in/stormyjackson/" target="_blank" class="cta-secondary">LinkedIn</a>
+    <a href="https://www.dropbox.com/scl/fi/d9rt9romjsn1dmifl3w5i/Stormy-Jackson-Resume.pdf?rlkey=9cf8h0coomv3xboq5nq875ha6&st=1ypyrz7m&dl=1" target="_blank" class="cta-secondary">Resume</a>
+  </div>
+
+</div>
+
+<!-- FOOTER NAV -->
+<div class="cs-footer-nav">
+  <div class="cs-footer-cta">Let's make something <span>people come back to.</span></div>
+  <a href="index.html" class="cs-next">← Back to all work</a>
+</div>
+
+</body>
+</html>
