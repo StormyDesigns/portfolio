@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mayo Clinic — Stormy Jackson</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a1a; }
+
+/* NAV */
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 2.5rem; border-bottom: 1px solid #e8e4d8;
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(255,253,247,0.92);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  max-width: 100%; width: 100%; box-sizing: border-box;
+}
+.nav-links { display: flex; gap: 2rem; font-size: 14px; color: #888; }
+.nav-links a { text-decoration: none; color: #888; transition: color 0.2s; }
+.nav-links a:hover { color: #1a1a1a; }
+.nav-back { font-size: 14px; color: #888; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: #FD830B; }
+
+/* HERO */
+.cs-hero {
+  background: #0B2161;
+  padding: 5rem 2.5rem 4rem;
+}
+.cs-hero-inner { max-width: 860px; margin: 0 auto; }
+.cs-tag {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.65);
+  margin-bottom: 1.2rem;
+}
+.cs-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; color: #fff;
+  line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.4rem;
+}
+.cs-subtitle {
+  font-size: 18px; color: rgba(255,255,255,0.75);
+  line-height: 1.7; max-width: 560px; margin-bottom: 3rem;
+}
+.cs-meta { display: flex; gap: 3rem; flex-wrap: wrap; }
+.cs-meta-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.3rem;
+}
+.cs-meta-value { font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+/* COVER */
+.cs-cover { max-width: 100%; border-bottom: 1px solid #e8e4d8; line-height: 0; }
+.cs-cover img { width: 100%; height: auto; display: block; }
+
+/* BODY */
+.cs-body { max-width: 800px; margin: 0 auto; padding: 4rem 2.5rem; }
+
+/* SECTION */
+.cs-section { margin-bottom: 3rem; }
+.cs-section p {
+  font-size: 17px; color: #444; line-height: 1.9;
+  margin-bottom: 1.4rem;
+}
+.cs-section p:last-child { margin-bottom: 0; }
+
+/* CONFIDENTIAL NOTE */
+.cs-confidential {
+  background: #F5F5F5;
+  border-radius: 14px; padding: 1.6rem 2rem;
+  margin-top: 3rem;
+  display: flex; align-items: flex-start; gap: 1rem;
+}
+.cs-confidential-icon {
+  font-size: 20px; flex-shrink: 0; margin-top: 2px;
+}
+.cs-confidential p {
+  font-size: 15px; color: #666; line-height: 1.7; margin: 0;
+}
+.cs-confidential a {
+  color: #0B2161; font-weight: 600; text-decoration: none;
+}
+.cs-confidential a:hover { text-decoration: underline; }
+
+/* FOOTER NAV */
+.cs-footer-nav {
+  border-top: 1px solid #e8e4d8; padding: 3rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.cs-footer-cta { font-size: 22px; font-weight: 800; color: #1a1a1a; letter-spacing: -0.02em; }
+.cs-footer-cta span { color: #FD830B; font-style: italic; }
+.cs-next {
+  font-size: 14px; font-weight: 600; color: #888;
+  text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+}
+.cs-next:hover { color: #FD830B; }
+
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.2rem; }
+  .cs-hero { padding: 3rem 1.2rem 2.5rem; }
+  .cs-body { padding: 2.5rem 1.2rem; }
+  .cs-meta { gap: 1.5rem; }
+  .cs-footer-nav { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.2rem; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-back">← Back to work</a>
+  <div class="nav-links">
+    <a href="index.html#work">Work</a>
+    <a href="https://www.dropbox.com/scl/fi/d9rt9romjsn1dmifl3w5i/Stormy-Jackson-Resume.pdf?rlkey=9cf8h0coomv3xboq5nq875ha6&st=1ypyrz7m&dl=1" target="_blank">Resume</a>
+    <a href="index.html#about">About</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-tag">Healthcare · Patient Experience</div>
+    <h1 class="cs-title">Mayo Clinic</h1>
+    <p class="cs-subtitle">Designing digital experiences that help patients navigate their healthcare journey with clarity and confidence.</p>
+    <div class="cs-meta">
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">My Role</div>
+        <div class="cs-meta-value">Product Designer</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Platform</div>
+        <div class="cs-meta-value">Mobile &amp; Web</div>
+      </div>
+      <div class="cs-meta-item">
+        <div class="cs-meta-label">Type</div>
+        <div class="cs-meta-value">B2C · Healthcare</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cs-cover">
+  <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/6d5c42ed-c344-4c72-8526-076b73ba0639_rwc_161x0x8856x6642x1920.png?h=d991218e54265af2e021f7de95aa7a43" alt="Mayo Clinic — patient digital experience">
+</div>
+
+<!-- BODY -->
+<div class="cs-body">
+
+  <div class="cs-section">
+    <p>At Mayo Clinic, I design digital experiences that support patients throughout their healthcare journey, from understanding their health information to navigating care with confidence.</p>
+    <p>I partner closely with product, engineering, and research teams to identify patient needs, simplify complex medical information, and translate them into intuitive, accessible solutions across mobile and web platforms. My work focuses on improving how patients engage with their care, reducing confusion, and empowering them to make informed decisions.</p>
+    <p>While much of this work is not yet public, I've contributed to initiatives aimed at transforming the digital healthcare experience, bringing greater clarity, usability, and patient-centered thinking to traditionally complex systems.</p>
+  </div>
+
+  <div class="cs-confidential">
+    <div class="cs-confidential-icon">🔒</div>
+    <p>Due to the confidential nature of this work, detailed designs and metrics are not publicly available. If you'd like to learn more about my experience, process, or impact, feel free to reach out — I'd be happy to share more.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER NAV -->
+<div class="cs-footer-nav">
+  <div class="cs-footer-cta">Let's make something <span>people come back to.</span></div>
+  <a href="index.html" class="cs-next">← Back to all work</a>
+</div>
+
+</body>
+</html>
