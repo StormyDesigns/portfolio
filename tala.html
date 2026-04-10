@@ -54,7 +54,6 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 .cs-meta {
   display: flex; gap: 3rem; flex-wrap: wrap;
 }
-.cs-meta-item {}
 .cs-meta-label {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
   text-transform: uppercase; color: rgba(255,255,255,0.35);
@@ -62,6 +61,17 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 }
 .cs-meta-value {
   font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500;
+}
+
+/* COVER */
+.cs-cover {
+  max-width: 100%;
+  background: #0E3D2B;
+  border-bottom: 1px solid #e8e4d8;
+}
+.cs-cover img {
+  width: 100%; height: auto; display: block;
+  object-fit: cover;
 }
 
 /* CONTENT */
@@ -138,7 +148,9 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
 }
 .cs-highlight p {
   color: rgba(255,255,255,0.7) !important;
+  margin-bottom: 0.8rem;
 }
+.cs-highlight p:last-child { margin-bottom: 0 !important; }
 .cs-highlight h3 {
   font-size: 18px; font-weight: 700; color: #6EE7B7;
   margin-bottom: 0.8rem;
@@ -194,20 +206,35 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   position: absolute; left: 0; color: #16A34A; font-weight: 700;
 }
 
-/* IMAGE PLACEHOLDER */
-.cs-img-placeholder {
-  width: 100%; background: #f0ede6;
-  border: 1.5px dashed #d4d0c8;
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
+/* IMAGE */
+.cs-img {
+  width: 100%; border-radius: 14px;
   margin: 1.5rem 0; overflow: hidden;
+  line-height: 0;
 }
-.cs-img-placeholder img {
+.cs-img img {
   width: 100%; height: auto; display: block; border-radius: 14px;
 }
-.cs-img-placeholder-text {
-  padding: 3rem; font-size: 12px; font-weight: 600;
-  letter-spacing: 0.08em; text-transform: uppercase; color: #bbb;
+
+/* GIF GRID — phone-sized GIFs side by side */
+.cs-gif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+.cs-gif-item {
+  display: flex; flex-direction: column; gap: 0.6rem;
+}
+.cs-gif-item img {
+  width: 100%; height: auto; display: block;
+  border-radius: 14px;
+  border: 1px solid #e8e4d8;
+}
+.cs-gif-caption {
+  font-size: 12px; font-weight: 600; color: #aaa;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-align: center;
 }
 
 /* FOOTER NAV */
@@ -237,6 +264,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   .cs-stats { grid-template-columns: 1fr; }
   .cs-goals { grid-template-columns: 1fr; }
   .cs-two-col { grid-template-columns: 1fr; }
+  .cs-gif-grid { grid-template-columns: repeat(2, 1fr); }
   .cs-footer-nav { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2rem 1.2rem; }
   .nav-links { display: none; }
 }
@@ -281,6 +309,11 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   </div>
 </div>
 
+<!-- COVER -->
+<div class="cs-cover">
+  <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/c636d881-5e74-4cad-90d2-3781345b8ce9_rw_1920.png?h=5c8cbfb095cdb048a83d1aaf4d485f37" alt="Tala Rewards cover">
+</div>
+
 <!-- BODY -->
 <div class="cs-body">
 
@@ -298,16 +331,28 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <div class="cs-section">
     <div class="cs-section-label">The Problem</div>
     <h2>Tala was losing users to competitors</h2>
-    <p>Competing apps were pulling users away by offering:</p>
-    <ul class="cs-list">
-      <li>Lower transfer fees and higher loan utility</li>
-      <li>Rewards, loyalty, and referral programs</li>
-      <li>Reduced friction for accessing funds</li>
-    </ul>
-    <p>Internal data revealed a clear insight: users who engaged with multiple Tala features showed significantly higher repayment rates and longer retention. The opportunity was to make multi-feature engagement feel rewarding — not just functional.</p>
+    <p>Competing apps were pulling users away by offering lower transfer fees, higher loan utility, rewards and referral programs, and reduced friction for accessing funds.</p>
+    <p>Internal data revealed a key insight: users who engaged with multiple Tala features showed significantly higher repayment rates and longer retention. The opportunity was to make multi-feature engagement feel rewarding — not just functional.</p>
 
     <div class="cs-callout">
-      <p><strong>Key insight:</strong> Multi-feature engagement correlates with higher repayment rates and retention. A rewards program could incentivize the behaviors that already predicted success.</p>
+      <p><strong>Tala's big bet:</strong> Multi-product engagement through incentivized actions drives higher lifetime value via stronger repayment rates and retention.</p>
+    </div>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/a63778c3-9e6b-4db3-a7f4-5f2941850745_rw_1920.png?h=7e0152c2dbf5f2ffcc0a4502ba7e9bcf" alt="Tala's big bet — multi-product engagement strategy">
+    </div>
+  </div>
+
+  <hr class="cs-divider">
+
+  <!-- TESTING THE WATER -->
+  <div class="cs-section">
+    <div class="cs-section-label">Proof of Concept</div>
+    <h2>Testing the water</h2>
+    <p>Before committing to the full program, I partnered with the product manager and researcher to test whether incentivizing account deposits through rewards would actually move behavior. It did — we saw a <strong>30% increase in account deposits</strong>. That result gave us the confidence to invest in a full rewards system.</p>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/77f84c87-f774-404e-b7d3-5ea1bdc5e399_rw_1920.png?h=2db87f701f8c27dfdd36a74d8943c6c1" alt="Testing the water — previous designs tested">
     </div>
   </div>
 
@@ -332,46 +377,6 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
         <div class="cs-goal-label">increase in new account deposits within 30 days</div>
       </div>
     </div>
-
-    <div class="cs-highlight">
-      <h3>Proof of concept</h3>
-      <p>Before the full rewards program, a partnership between the designer, product manager, and researcher tested incentivizing account deposits through rewards. The result: a 30% increase in account deposits — validating the approach and giving the team confidence to invest in a full program.</p>
-    </div>
-  </div>
-
-  <hr class="cs-divider">
-
-  <!-- CHALLENGES -->
-  <div class="cs-section">
-    <div class="cs-section-label">Challenges</div>
-    <h2>Designing with constraints</h2>
-    <p>Three key challenges shaped how I approached this project:</p>
-
-    <div class="cs-two-col">
-      <div class="cs-col-card">
-        <h4>Unfamiliar market</h4>
-        <ul>
-          <li>Feature launched in Philippines first</li>
-          <li>Relied on a local researcher for competitive analysis</li>
-          <li>User interviews were conducted in Tagalog</li>
-        </ul>
-      </div>
-      <div class="cs-col-card">
-        <h4>Developer constraints</h4>
-        <ul>
-          <li>Engineering team was at capacity</li>
-          <li>Required a simplified feature design</li>
-          <li>Scope had to stay lean without sacrificing quality</li>
-        </ul>
-      </div>
-    </div>
-    <div class="cs-col-card" style="margin-top: 0;">
-      <h4>Missing design system</h4>
-      <ul>
-        <li>Worked with inconsistent previous designs while the system was being finalized</li>
-        <li>Collaborated closely with brand and systems designer to contribute components as we went</li>
-      </ul>
-    </div>
   </div>
 
   <hr class="cs-divider">
@@ -380,37 +385,52 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <div class="cs-section">
     <div class="cs-section-label">Research</div>
     <h2>Competitive analysis</h2>
-    <p>I examined loyalty program apps in both the Philippines and the US to identify common patterns and user expectations. The analysis surfaced four key themes:</p>
-    <ul class="cs-list">
-      <li>Prominent display of points or status at the top of the screen</li>
-      <li>A mix of quick-redemption and long-term rewards to maintain engagement</li>
-      <li>Variety in reward types to prevent user boredom over time</li>
-      <li>Clear guides explaining how to earn tokens — education built into the flow</li>
-    </ul>
+    <p>I examined loyalty program apps in both the Philippines and the US to identify common patterns and user expectations. Four key themes emerged: prominent display of points or status, a mix of quick and long-term rewards, variety to prevent boredom, and clear guides explaining how to earn tokens.</p>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/29d55da6-e091-422a-87fd-48f2655a0bff_rw_1920.png?h=86a3a6f703e135e7945348689a8ce7eb" alt="Competitive analysis findings">
+    </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- DESIGN PROCESS -->
+  <!-- USER FLOW -->
   <div class="cs-section">
     <div class="cs-section-label">Design Process</div>
-    <h2>Explorations and iterations</h2>
-    <p>I started by creating a navigation flow that was reviewed and approved by the product manager, engineers, and design team before moving into screens.</p>
+    <h2>User flow</h2>
+    <p>I created a user flow mapping out the full experience of navigating through the rewards feature — from entry points to redemption. Once reviewed and approved by the product manager, engineers, and design team, I moved into screen designs.</p>
 
-    <p>My first two iterations of the Rewards home page explored different approaches to surfacing key information:</p>
-    <ul class="cs-list">
-      <li><strong>Iteration 1:</strong> Token amount and progress bar at top, "View rewards" button, activity log for tasks, "How to earn" education section, and a list of earnable activities</li>
-      <li><strong>Iteration 2:</strong> Nested rewards and activities behind earn/redeem buttons to reduce visual overwhelm</li>
-    </ul>
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/8eb344e8-a834-4ba2-8bf3-d63dd58c0aab_rw_3840.jpg?h=61d881b3ab3dc637af772fb44cec5056" alt="User flow for Tala Rewards">
+    </div>
+  </div>
 
-    <p>After reviewing both with the team, I identified several problems:</p>
-    <ul class="cs-list">
-      <li>Unclear information hierarchy across the home screens</li>
-      <li>Nested rewards obscured the incentive — users couldn't easily see what they were working toward</li>
-      <li>The product manager wanted an unlimited token ceiling, not the fixed 400-token cap in the initial designs</li>
-      <li>Reward cards consumed excessive space on the options screen</li>
-      <li>Redemption confirmation lacked any celebratory moment</li>
-    </ul>
+  <hr class="cs-divider">
+
+  <!-- DESIGN EXPLORATIONS -->
+  <div class="cs-section">
+    <div class="cs-section-label">Design Explorations</div>
+    <h2>Iterations 1 &amp; 2</h2>
+    <p>My first iteration placed the token amount and progress bar at the top, with a "View rewards" button, an activity log, a "How to earn" section, and a list of earnable activities. The second iteration nested rewards and activities behind earn/redeem buttons to reduce visual overwhelm.</p>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/986ed35a-d074-400a-b4aa-10cadb538388_rw_1920.png?h=caa2b1c4231e5b85322af145fef4be91" alt="Rewards home screen — iterations 1 and 2">
+    </div>
+
+    <p>For reward options, I separated rewards by token milestone. A disabled redeem button appeared when the user didn't have enough tokens, with a dedicated page for reward details and redemption confirmation.</p>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/16c12098-55b2-4fe9-9c92-cfc4be5e30de_rw_1920.png?h=a81e69537101ccdbf5e9d955babaa96e" alt="Reward options, details, and redemption screens">
+    </div>
+
+    <div class="cs-highlight">
+      <h3>Problems identified</h3>
+      <p>After review, several issues surfaced: unclear information hierarchy, nested rewards obscuring the incentive, a fixed 400-token cap the PM wanted removed, reward cards taking up too much space, and no celebratory moment on redemption.</p>
+    </div>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/277600c0-2e66-4672-85a8-62f20610ef7b_rw_1920.png?h=b0221751b466d4dce6a9431605f387e2" alt="Problems identified with initial designs">
+    </div>
   </div>
 
   <hr class="cs-divider">
@@ -419,28 +439,42 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <div class="cs-section">
     <div class="cs-section-label">Refined Design</div>
     <h2>Designs for user testing</h2>
-    <p>I refined the designs to address the feedback and set up for usability testing. Key updates included:</p>
-    <ul class="cs-list">
-      <li>A bright, sticky token display with illustrations at the top of the Rewards home screen</li>
-      <li>A featured rewards carousel with a "View all" option — keeping rewards visible without overwhelming</li>
-      <li>An activities section clearly showing token amounts per action</li>
-      <li>An info icon linking to the "how to earn" reference</li>
-      <li>A bottom sheet for reward details with a conditional CTA — enabled when tokens were sufficient, disabled when they weren't</li>
-    </ul>
+    <p>I tested two entry point placements — one in the bottom navigation and one at the top of the screen — to see which was more noticeable.</p>
 
-    <p>I also tested two entry point placements for the Rewards feature:</p>
-    <div class="cs-two-col">
-      <div class="cs-col-card">
-        <h4>Option A</h4>
-        <ul>
-          <li>Bottom navigation bar</li>
-        </ul>
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/27a481e9-5487-411f-92f0-b1ebbe73b4ae_rw_1200.png?h=d326685adf78fda3339441a245dde69c" alt="Two entry point options for Tala Rewards">
+    </div>
+
+    <p>I added an onboarding introduction screen before the user enters the rewards home page, using the opportunity to clearly communicate what Tala Rewards is and how to earn.</p>
+
+    <div class="cs-gif-grid">
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/5691ad1a-8fda-4dda-a4be-b50aa1384acb_rw_600.gif?h=ba36874b3370cfbbc138c1f38c6fe011" alt="Introduction screen">
+        <div class="cs-gif-caption">Introduction screen</div>
       </div>
-      <div class="cs-col-card">
-        <h4>Option B</h4>
-        <ul>
-          <li>Top of screen, across from the Tala logo</li>
-        </ul>
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/b8c99f7f-42ca-4a57-bd17-3387745a46a9_rw_600.gif?h=940f61c413445c1dc71772eb900d998d" alt="Rewards home screen">
+        <div class="cs-gif-caption">Rewards home</div>
+      </div>
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/95b3eac8-7a00-4956-ac19-e88f51f30dc5_rw_600.gif?h=9c97fc8727ef646696b610f9b24d7592" alt="How to earn info">
+        <div class="cs-gif-caption">How to earn</div>
+      </div>
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/0d2826e2-76b8-43db-ac5d-a2d6281812f9_rw_600.gif?h=abd21553b736dce64299483912fad803" alt="Reward detail bottom sheet">
+        <div class="cs-gif-caption">Reward details</div>
+      </div>
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4e5c7451-15e8-4dcc-a17f-d24e3f636afd_rw_600.gif?h=b205767841e9c09caae42e446d4275a0" alt="View all rewards">
+        <div class="cs-gif-caption">View all rewards</div>
+      </div>
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/397305a8-382f-4404-893f-a213cdcdc755_rw_600.gif?h=3f22ffa5b6771fa01a37d182207eccd5" alt="Activity card details">
+        <div class="cs-gif-caption">Activity details</div>
+      </div>
+      <div class="cs-gif-item">
+        <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/4227d3ed-d3b8-42b0-99c0-9234c0b88ec8_rw_600.gif?h=a6f999f82fe215945c6559f3586beb9d" alt="Redemption instructions">
+        <div class="cs-gif-caption">Redemption</div>
       </div>
     </div>
   </div>
@@ -459,20 +493,19 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
         <ul>
           <li>Users understand how to earn tokens</li>
           <li>Users understand how to redeem rewards</li>
-          <li>Users can identify the relationship between tokens and rewards</li>
+          <li>Users grasp the token-to-reward relationship</li>
         </ul>
       </div>
       <div class="cs-col-card">
         <h4>Hypothesis 2</h4>
         <ul>
-          <li>Users feel motivated to complete desired behaviors for rewards</li>
+          <li>Users feel motivated to complete desired behaviors</li>
           <li>Rewards feel appealing and worth the effort</li>
         </ul>
       </div>
     </div>
 
-    <p style="margin-top: 1.5rem;">Users were split into two segments:</p>
-    <div class="cs-two-col">
+    <div class="cs-two-col" style="margin-top: 0;">
       <div class="cs-col-card">
         <h4>Mature borrowers (n=7)</h4>
         <ul>
@@ -489,20 +522,24 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
       </div>
     </div>
 
-    <div class="cs-highlight" style="margin-top: 2rem;">
+    <div class="cs-highlight">
       <h3>Both hypotheses validated ✓</h3>
-      <p>Users clearly understood the activity-to-token mechanics and could identify redeemable vs. unredeemable rewards. They also understood that tokens would be deducted upon redemption. Areas needing clarification: minimum amounts, variable earnings, redemption frequency, and reward reusability.</p>
-      <p style="margin-top: 1rem;">On motivation: non-transacting users said they were likely to try new features for rewards. Transacting users said they'd increase their engagement. Tala-specific rewards and local options — Jollibee, supermarkets, drugstores — drove the strongest motivation.</p>
+      <p>Users clearly understood the activity-to-token mechanics and could identify redeemable vs. unredeemable rewards. They also understood that tokens would be deducted upon redemption.</p>
+      <p>On motivation: non-transacting users said they were likely to try new features for rewards. Transacting users said they'd increase their engagement. Local rewards — Jollibee, supermarkets, drugstores — drove the strongest motivation.</p>
     </div>
   </div>
 
   <hr class="cs-divider">
 
-  <!-- DESIGN UPDATES -->
+  <!-- POST-TESTING UPDATES -->
   <div class="cs-section">
     <div class="cs-section-label">Post-Testing Updates</div>
     <h2>Aligning with the design system</h2>
-    <p>After testing, I collaborated with the brand design team and systems designer to align the final designs with Tala's newly finalized design system. One meaningful change came out of this phase: the terminology shifted from "Tokens" to "Points" — users in testing were more familiar with points from other apps, and the change improved immediate comprehension.</p>
+    <p>After testing, I collaborated with the brand design team and systems designer to align the final designs with Tala's newly finalized design system. One meaningful terminology change came out of this phase: "Tokens" became "Points" — users were more familiar with points from other apps, which improved immediate comprehension.</p>
+
+    <div class="cs-img">
+      <img src="https://cdn.myportfolio.com/f2db5c34-71eb-47ed-a88b-8109529d458c/20e4dfe7-7fcc-4b5f-a5f9-4da0b463a2b2_rw_1920.png?h=f65e081af54207e9fa4dd28d969d64b9" alt="Final designs updated with Tala design system">
+    </div>
   </div>
 
   <hr class="cs-divider">
@@ -534,7 +571,7 @@ body { font-family: -apple-system, sans-serif; background: #FFFDF7; color: #1a1a
   <div class="cs-section">
     <div class="cs-section-label">Reflection</div>
     <h2>Key learnings</h2>
-    <p><strong>Navigating ambiguity in an unfamiliar market.</strong> I couldn't rely on personal knowledge of the Philippines market, so I leaned heavily on the local researcher — and that partnership was essential. It reinforced how much good research partnerships matter when you're designing for a context you haven't lived in.</p>
+    <p><strong>Navigating ambiguity in an unfamiliar market.</strong> I couldn't rely on personal knowledge of the Philippines market, so I leaned heavily on the local researcher — and that partnership was essential. It reinforced how much good research partnerships matter when designing for a context you haven't lived in.</p>
     <p><strong>Contributing to a design system mid-project.</strong> Working without a finalized system was a constraint, but it also created an opportunity. By collaborating closely with the brand and systems teams throughout, I was able to contribute components and patterns that outlasted the project itself.</p>
   </div>
 
